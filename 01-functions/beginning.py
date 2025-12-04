@@ -85,3 +85,57 @@ elif language_set == 'es':
     print(f"Hola, {my_name}, ¡es un placer conocerte!")
 else:
     print("Error! Try again")
+
+
+# Maximum value
+
+my_values = input("Please set 3 values for x, y and z: ")
+my_list = my_values.split()
+
+def max_of_three(my_list):
+    max_value = int(my_list[0])
+    for item in my_list:
+        if int(item) > max_value:
+            max_value = int(item)
+    return max_value
+
+print(f"Maximum value of those three values is: {max_of_three(my_list)}")
+
+
+# Seocond to HMS
+
+my_value = float(input("Please set time in second: "))
+hours = my_value // 3600
+remain_after_hours = my_value - hours * 3600
+minutes = remain_after_hours // 60
+seconds = remain_after_hours - minutes * 60
+
+print(f"The result is: {hours} hours {minutes} minutes and {seconds} seconds")
+
+
+# Counting vowels
+
+set_lang = input("Please set language setting, write 'ru' or 'eng': ")
+
+if set_lang == "eng":
+    my_value = input("Please enter text you want to count the vowels in: ")
+elif set_lang == "ru":
+    my_value = input("Введите текст, в котором вы хотите подсчитать гласные:")
+else:
+    print("It's wrong input. Try again!")
+
+vowels_eng = "aeuio"
+vowels_ru = "аоуэиыеёюя"
+
+count = 0
+
+for letter in my_value:
+    if (letter in vowels_eng or letter in vowels_ru or letter in vowels_eng.upper() or letter in vowels_ru.upper()):
+        count += 1
+
+if count == 1:
+    print("There's only one vowel in your text")
+elif count == 0:
+    print("There're no vowels in your text")
+else:
+    print(f"There're {count} vowels in your text")
