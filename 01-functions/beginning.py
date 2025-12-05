@@ -124,18 +124,21 @@ elif set_lang == "ru":
 else:
     print("It's wrong input. Try again!")
 
-vowels_eng = "aeuio"
-vowels_ru = "аоуэиыеёюя"
+def vowel_counter(text):
+    
+    count = 0
+    vowels_eng = "aeuio"
+    vowels_ru = "аоуэиыеёюя"
 
-count = 0
+    for letter in text.lower():
+        if (letter in vowels_eng or letter in vowels_ru):
+            count += 1
+    return count
 
-for letter in my_value:
-    if (letter in vowels_eng or letter in vowels_ru or letter in vowels_eng.upper() or letter in vowels_ru.upper()):
-        count += 1
 
-if count == 1:
+if vowel_counter(my_value) == 1:
     print("There's only one vowel in your text")
-elif count == 0:
+elif vowel_counter(my_value) == 0:
     print("There're no vowels in your text")
 else:
-    print(f"There're {count} vowels in your text")
+    print(f"There're {vowel_counter(my_value)} vowels in your text")
