@@ -1,0 +1,20 @@
+data = [(4,1), (7,2), (1,8), (3,5), (2,9)]
+sorted_data = sorted(data, key=lambda x: x[0]+x[1], reverse=True)
+
+create_power = lambda power: lambda x: x**power
+square = create_power(2)
+cube = create_power(3)
+print(square(5))   # 25
+print(cube(3))     # 27
+
+def double_result(func):
+    def wrapped(*args, **kwargs):
+        result = func(*args, **kwargs)
+        return result * 2
+    return wrapped
+
+@double_result
+def add(a, b):
+    return a+b
+
+print(add(3, 5))
