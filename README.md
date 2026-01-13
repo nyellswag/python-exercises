@@ -13,13 +13,13 @@
 ##  Продвинутый Python 
 | Тема                     | Статус          | Папка                        |
 |--------------------------|-----------------|------------------------------|
-| Функции                  | ⏳ Namespaces & Scoops | 01-functions/advanced_functions/ |
+| Функции                  | ⏳ High Order Functions & Decorators | 01-functions/advanced_functions/ |
 
 
-Дней подряд с коммитами: 2 и пошло снова ↑ 
+Дней подряд с коммитами: 1 и пошло снова ↑ 
 Старт: 3 декабря 2025
 Начало нового старта: 9 января 2025
 
 Что нового: 
 - Продолжение практики и изучение пройденных тем
-- `01-functions/advanced_functions/logger_message.py` → Мини проект Logger Message 
+- High Order Functions & Decorators
