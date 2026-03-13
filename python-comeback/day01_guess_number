@@ -1,0 +1,33 @@
+import random
+
+print("Hello, Welcome to 'Try Guess Our Secret Number!'")
+def level_choice():
+    choice = int(input("Please choose what level you want to play:\n1. Easy\n2. Hard\n"))
+    if choice == 1:
+        secret_num = random.randint(1, 50)
+    else:
+        secret_num = random.randint(1, 500)
+    return secret_num
+
+
+def secret_num_logic(secret_num):
+    attempts = 0
+    while True:
+        try:
+            guess_num = int(input("What is your guess?: "))
+        except ValueError:
+            print("Something with your answer, try again later.")
+            continue
+
+        if guess_num == secret_num:
+            attempts += 1
+            print(f"You are the best, you got right answer! \nYou guessed right number in {attempts} attempts")
+            break
+        elif guess_num < secret_num:
+            print("Secret Number is higher")
+            attempts += 1
+        else:
+            print("Secret Number is lower")
+            attempts += 1
+
+secret_num_logic(level_choice())
