@@ -11,3 +11,4 @@
 ## Progress
 - Day 1 — Guess Number Game
 - Day 2 — Password Generator
+- Day 3 - CLI Task Manager
