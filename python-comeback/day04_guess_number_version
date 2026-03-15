@@ -1,0 +1,43 @@
+import random
+print("Hello, Welcom to Guess Number 2.0")
+
+user_attempts = 0
+
+while True:
+    difficulty_choice = input("Please set difficultry choice:\n1. Easy\n2. Medium\n3. Hard\nYour choice: ")
+
+    if difficulty_choice in ("1", 'easy', 'Easy'):
+        user_attempts = 15
+        break
+    elif difficulty_choice in ('2', 'medium', 'Medium'):
+        user_attempts = 10
+        break
+    elif difficulty_choice in ("3", 'hard', 'Hard'):
+        user_attempts = 5
+        break
+    else:
+        print("Please choose accurate difficulty")
+
+guessed_num = random.randint(1, 100)
+is_guessed = False
+
+while user_attempts > 0:
+    print(f'Attempts left: {user_attempts}')
+    try:
+        user_guess = int(input("What is your guess: "))
+        if user_guess == guessed_num:
+            print("Congratulations, you guessed the number!")
+            is_guessed = True
+            break
+        elif user_guess < guessed_num:
+            print("The guessed number is higher")
+            user_attempts -= 1
+        else:
+            print("The guessed number is lower")
+            user_attempts -= 1
+    except ValueError:
+        print("Please set correct value!")
+        
+if is_guessed != True:
+    print(f"You ran out of attempts. The guessed number was: {guessed_num}")
+print("See you later")
