@@ -1,0 +1,42 @@
+print("Hello, Welcome to Task Manager")
+
+task_list = []
+
+def add_task():
+    task_to_add = input("What do you want to add: ")
+    task_list.append(task_to_add)
+    print("Your task was added")
+
+def del_task():
+    if not task_list:
+        print("There are no tasks to delete")
+    else:
+        task_to_del = input("What do you want to delete. Write tasks' title: ")
+        if task_to_del in task_list:
+            task_list.remove(task_to_del)
+            print("Your task was deleted")
+        else:
+             print("Your task not found")
+
+def task_view():
+    if not task_list:
+        print("The list is empty")
+    else:
+        print("Here's your Tasks:\n")
+        print("\n".join(f"\t{i}. {item}" for i, item in enumerate(task_list, 1)))
+
+while True:
+    user_choice = input("Please choose one option:\n1. Add Task\n2. Delete Task\n3. View Tasks\n4.Exit\nYour choice: ")
+    if user_choice in {"1", "2", "3", "4"} or user_choice in {"add", "delete", 'view', 'exit'}:
+        if user_choice in ("1", "add"):
+                add_task()
+        elif user_choice in ("2", "del"):
+                del_task()
+        elif user_choice in ("3", "view"):
+                task_view()
+        else:
+            print("See you later")
+            break
+    else:
+        print("Plese set correct value!")
+    print("Something is wrong with answer, try again!")
