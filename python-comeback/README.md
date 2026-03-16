@@ -13,3 +13,4 @@
 - Day 2 — Password Generator
 - Day 3 - CLI Task Manager
 - Day 4 - guess number with difficulty and attempts
+- Day 5 - Note Manager alpha Version
