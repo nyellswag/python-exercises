@@ -1,0 +1,40 @@
+print("Welcome to Your Notes")
+
+def add_note():
+    new_note = input('What do you want to add: ')
+    with open("data_notes.txt", 'a') as notes:
+        notes.write('\n' + new_note)
+    print("Your note was added")
+
+def view_note():
+    with open("data_notes.txt", 'r') as notes:
+        lines = notes.read().splitlines()
+        print('\n'.join(f"{i}. {line}" for i, line in enumerate(lines, 1)))
+
+def del_note():
+
+    with open("data_notes.txt", 'r') as notes:
+        lines = notes.readlines()
+        print(lines)
+
+    note_to_del = input('What note do you want to delete: ')
+
+    with open("data_notes.txt", 'w') as notes:
+        for line in lines:
+            if line.strip() != note_to_del:
+                notes.write(line)
+    print("Your note was deleted!")
+
+while True:
+    user_choice = input("Please choose option:\n1. Add note\n2. Delete note\n3. View notes\n4. Exit\nYour choice: ")
+    if user_choice in ("1", "add"):
+        add_note()
+    elif user_choice in ("2", "del"):
+        del_note()
+    elif user_choice in ("3", 'view'):
+        view_note()
+    elif user_choice in ("4", 'exit'):
+        print("See you later")
+        break
+    else:
+        print("Please set accurate choice!")
