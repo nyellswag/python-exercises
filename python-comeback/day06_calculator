@@ -1,0 +1,61 @@
+from functools import reduce
+print("Welcome to Calculator")
+
+def add_num():
+    user_expression = input("Please set your expression here: ")
+    while True:
+        try:
+            sum_result = sum([int(x) for x in user_expression.strip().split('+')])
+            print(f"The sum of numbers is: {sum_result}")
+            break
+        except ValueError:
+            print("Set correct values!")
+
+def substract_num():
+    user_expression = input("Please set your expression here: ")
+    while True:
+        try:
+            num_list = [int(x) for x in user_expression.strip().split('-')]
+            substract_result = reduce(lambda a, b: a - b, num_list)
+            print(f"The substraction result of numbers is: {substract_result}")
+            break
+        except ValueError:
+            print("Set correct values!")
+
+def multiply_num():
+    user_expression = input("Please set your expression here: ")
+    while True:
+        try:
+            num_list = [int(x) for x in user_expression.strip().split('*')]
+            multiply_result = reduce(lambda a, b: a * b, num_list)
+            print(f"The multiplication result of numbers is: {multiply_result}")
+            break
+        except ValueError:
+            print("Set correct values!")
+
+def devide_num():
+    user_expression = input("Please set your expression here: ")
+    while True:
+        try:
+            num_list = [int(x) for x in user_expression.strip().split('/')]
+            devide_result = reduce(lambda a, b: a / b, num_list)
+            print(f"The devision result of numbers is: {devide_result}")
+            break
+        except ValueError:
+            print("Set correct values!")
+
+
+while True:
+    user_choice = input("What operation would you like to perform?\n1. Addition\n2. Substraction\n3. Multiplication\n4. Division\n5. Exit\nYour choice: ")
+    if user_choice in ('1', 'add'):
+        add_num()
+    elif user_choice in ('2', 'substract'):
+        substract_num()
+    elif user_choice in ('3', 'multiply'):
+        multiply_num()
+    elif user_choice in ('4', 'devide'):
+        devide_num()
+    elif user_choice in ("5", 'exit'):
+        break
+    else:
+        print("Please choose correct variant!")
