@@ -14,8 +14,8 @@ def view_note():
 def del_note():
 
     with open("data_notes.txt", 'r') as notes:
-        lines = notes.readlines()
-        print(lines)
+        lines = notes.read().splitlines()
+        print('\n'.join(f"{i}. {line}" for i, line in enumerate(lines, 1)))
 
     note_to_del = input('What note do you want to delete: ')
 
