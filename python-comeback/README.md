@@ -15,3 +15,4 @@
 - Day 4 - guess number with difficulty and attempts
 - Day 5 - Note Manager alpha Version
 - Day 6 - Calculator
+- Day 7 - The Telegram Bot Project Start
